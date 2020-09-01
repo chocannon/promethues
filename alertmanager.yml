@@ -1,0 +1,15 @@
+global:
+  smtp_smarthost: 'smtp.126.com:25'
+  smtp_from: 'ch920410@126.com'
+  smtp_auth_username: 'ch920410@126.com'
+  smtp_auth_password: 'ZBYNLHLYRUJLXPUV'
+  smtp_require_tls: false
+
+route:
+  group_interval: 1m   #当第一个报警发送后，等待'group_interval'时间来发送新的一组报警信息
+  repeat_interval: 1m   # 如果一个报警信息已经发送成功了，等待'repeat_interval'时间来重新发送他们
+  receiver: 'mail-receiver'
+receivers:
+- name: 'mail-receiver'
+  email_configs:
+    - to: '991152856@qq.com'

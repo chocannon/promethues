@@ -1,0 +1,8 @@
+groups:
+  - name: test-rule
+    rules:
+    - alert: AppServerDown
+      expr: sum(up{job="appserver"}) == 0
+      for: 1m
+      labels:
+        severity: critical
